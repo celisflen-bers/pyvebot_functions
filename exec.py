@@ -3,6 +3,7 @@
 
 import sys, getopt
 import xmlrpclib
+import file functions
 pypi_base_url = "https://pypi.python.org/pypi/"
 def package_located(argument):
   info = {}
