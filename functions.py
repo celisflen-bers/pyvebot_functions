@@ -18,18 +18,13 @@ def srv_conn():
 
 
 def package_located(pkg):
-  info = {}
 
   pkg_info = srv_conn()
   rel = pkg_info.package_releases(pkg)
-  info['lastest_rel'] = rel[0]
+  lastest_rel = rel and rel[0] or None
 
-  pkg_data = pkg_info.release_data(pkg, info['lastest_rel'])
-  info['name'] = pkg_data['name']
-  info['summary'] = pkg_data['summary']
-  info['url'] = str(pypi_base_url + pkg)
-  info['home_page'] = pkg_data['home_page']
-  return info
+  pkg_data = pkg_info.release_data(pkg, lastest_rel)
+  return pkg_data
 
 
 def simplesearch(pkg):

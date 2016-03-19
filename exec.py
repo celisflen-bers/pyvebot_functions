@@ -24,9 +24,9 @@ def pysearch(pkg='pypi'):
 def pypi(pkg='pypi'):
 # En representación del bot
   res = package_located(pkg)
-  print '  ' + res['name'] + ': ' + res['lastest_rel']
+  print '  ' + res['name'] + ': ' + res['version']
   print '    ' + res['summary']
-  print '  Visite ' + res['url'] + ' para ver paquete pypi'
+  print '  Visite ' + res['package_url'] + ' para ver paquete pypi'
   print '  Visite ' + res['home_page'] + ' para más info'
 
 def main(argv):
